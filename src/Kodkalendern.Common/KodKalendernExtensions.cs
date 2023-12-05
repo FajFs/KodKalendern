@@ -13,6 +13,9 @@ public static class KodKalendernExtensions
             .MinimumLevel.Debug()
             .WriteTo.Console()
             .CreateLogger();
+
+        services.AddTransient<IInputRepository, InputRepository>();
+
         return services;
     }
 
