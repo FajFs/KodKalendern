@@ -1,6 +1,5 @@
 ﻿using KodKalendern.Common;
 using KodKalendern.Worker.Interfaces;
-using MoreLinq;
 
 namespace KodKalendern.Worker;
 
