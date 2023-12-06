@@ -22,4 +22,10 @@
     <ProjectReference Include="..\Kodkalendern.Common\KodKalendern.Common.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="day.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>
