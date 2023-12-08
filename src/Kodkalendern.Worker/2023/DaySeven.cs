@@ -15,6 +15,18 @@ public partial class DaySeven(
     {
         await _inputRepository.GetInputAsync("day.txt");
 
-        //_logger.LogInformation("Part 1: {result}", result);
+        var result = _inputRepository.ToList<string>("\n")
+            .Select(x => x.Split(" ").Last())
+            .Select(int.Parse)
+            .GroupBy(x => x)
+            //take the group with the most items
+            .OrderByDescending(x => x.Count())
+            //take the first group
+            .First()
+            //take the key of the group
+            .Key;
+            
+
+        _logger.LogInformation("Part 1: {@result}", result);
     }
 }
