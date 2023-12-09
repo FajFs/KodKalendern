@@ -16,6 +16,15 @@ public partial class DayNine(
     {
         await _inputRepository.GetInputAsync("day.txt");
 
+        var result = _inputRepository.ToList<string>("\n")
+            .First()
+            //remove satelite
+            .Replace("/*", "")
+            //remove UFO
+            .Replace("*U", "")
+            .Count(x => x == '*');
+
+        _logger.LogInformation("Resultatet är {result}", result);
     }
 }
 
